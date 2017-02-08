@@ -4,14 +4,11 @@ Page({
         // wx.navigateTo({
         //     url:"/pages/post/post"})
         //redirectTo触发unload事件
-        wx.redirectTo({
+        wx.switchTab({
             url:"/pages/post/post"
         })
     },
     onHide:function(e){
         console.log("hide")
-    },
-     onUnload:function(e){
-        console.log("unload")
     }
 })

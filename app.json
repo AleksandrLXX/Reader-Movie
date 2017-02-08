@@ -2,10 +2,31 @@
     "pages": [
         "pages/welcome/welcome",
         "pages/post/post",
-       "pages/post/post-detail/post-detail"
+       "pages/post/post-detail/post-detail",
+       "pages/movies/movies"
    
     ],
     "window":{
         "navigationBarBackgroundColor": "#405f80"
+    },
+    "tabBar":{
+        "list":[
+            {
+              "pagePath":"pages/post/post",
+              "text":"MorassNews",
+              "iconPath":"/images/tab/News-anti.png",
+              "selectedIconPath":"/images/tab/News-focus.png"
+            },
+            {
+                "pagePath":"pages/movies/movies",
+                "text":"MorassMovie",
+                "iconPath":"/images/tab/Movie-anti.png",
+                 "selectedIconPath":"/images/tab/Movie-focus.png"
+            }
+        ],
+        "color":"#b3d4db",
+        "selectedColor":"#405f80",
+        "borderStyle":"white"
+        
     }
 }

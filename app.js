@@ -1,0 +1,15 @@
+//整个应用程序周期里的数据控制
+App({
+    globalData:{
+        g_musicStatus:false,
+        g_bgmPage:null
+    },
+    onLaunch:function(){
+        wx.onBackgroundAudioPlay(function(){
+            this.globalData.g_musicStatus=true;
+        });
+        wx.onBackgroundAudioPause(function(){
+            this.globalData.g_musicStatus=false;
+        })
+    }
+})

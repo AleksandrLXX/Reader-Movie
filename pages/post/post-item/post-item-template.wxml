@@ -1,4 +1,4 @@
-
+<!--若在template上使用相对路径，那么其实要设置引用这个template的文件的相对路径-->
 <template name="postItem">
     <view class="post-container" catchtap="onPostTap" data-postId="{{item.postId}}">
         <view class="post-author-date">

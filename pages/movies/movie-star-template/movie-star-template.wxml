@@ -1,0 +1,10 @@
+<template name="movie-star-template">
+  <view class="star-container">
+    <image src="/images/icon/star.png"></image>
+    <image src="/images/icon/star.png"></image>
+    <image src="/images/icon/star.png"></image>
+    <image src="/images/icon/star.png"></image>
+    <image src="/images/icon/star.png"></image>
+    <text>8.7</text>
+  </view>
+</template>

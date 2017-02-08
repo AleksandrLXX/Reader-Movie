@@ -1,6 +1,7 @@
 <view class="container">
-  <image src="{{postData.headImgSrc}}" class="header-image"></image>
-  <image src="/images/music/music-start.png" class="audio"></image>
+  <image src="{{!musicStatus?postData.headImgSrc:postData.music.coverImg}}" class="header-image"></image>
+  <image catchtap="onMusicTap" wx:if="{{!musicStatus}}" src="/images/music/music-start.png" class="audio"></image>
+  <image catchtap="onMusicTap" wx:else src="/images/music/music-stop.png" class="audio"></image>
   <view class="author-date">
     <image src="{{postData.avatar}}" class="avatar"></image>
     <text class="author">{{postData.author}}</text>
@@ -11,7 +12,7 @@
   <view class="tool">
     <image wx:if="{{postCollected[postId+'']}}" src="/images/icon/collection.png" bindtap="onCollectionTap"></image>
     <image wx:else src="/images/icon/collection-anti.png" bindtap="onCollectionTap"></image>
-    <image src="/images/icon/share.png"></image>
+    <image src="/images/icon/share.png" bindtap="onShareTap"></image>
   </view>
   <text class="detail">{{postData.detail}}</text>
 </view>
