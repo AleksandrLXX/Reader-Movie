@@ -1,8 +1,8 @@
 <import src="../movie-star-template/movie-star-template.wxml" />
 <template name="movie-unit-template">
   <view class="unit-container">
-    <image src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p698531629.jpg"></image>
-    <text>嫌疑人x的献身</text>
-    <template is="movie-star-template" />
+    <image src="{{images.large}}"></image>
+    <text>{{title}}</text>
+    <template is="movie-star-template" data="{{rating}}" />
   </view>
 </template>

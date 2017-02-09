@@ -1,6 +1,6 @@
 <import src="movie-list-template/movie-list-template.wxml" />
-<view>
-  <template is="movie-list-template" />
-  <template is="movie-list-template" />
-  <template is="movie-list-template" />
+<view class="container">
+<block wx:for="{{[dataArrays.in_theaters_dataArray,dataArrays.coming_soon_dataArray, dataArrays.top250_dataArray]}}">
+  <template is="movie-list-template" data="{{item}}" />
+</block>
 </view>

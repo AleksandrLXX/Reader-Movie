@@ -2,7 +2,8 @@
 App({
     globalData:{
         g_musicStatus:false,
-        g_bgmPage:null
+        g_bgmPage:null,
+        doubanAPIBase:"https://api.douban.com"
     },
     onLaunch:function(){
         wx.onBackgroundAudioPlay(function(){
