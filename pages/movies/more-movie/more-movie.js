@@ -1,19 +1,39 @@
 // pages/movies/more-movie/more-movie.js
+var util = require("../../../util/util.js");
 Page({
-  data:{},
-  onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
+  data: {
+    movies: [],
+    navigateTitle: "",
+    countTotal: 0
+
   },
-  onReady:function(){
-    // 页面渲染完成
+  onLoad: function (options) {
+    // console.log(options);
+    var that = this;
+    this.data.navigateTitle = options.listTitle;
+    var APIUrl = options.APIUrl;
+    this.setData({APIUrl:APIUrl});
+    util.http(APIUrl,this.loadData);
+
   },
-  onShow:function(){
-    // 页面显示
+  onReady: function () {
+    wx.setNavigationBarTitle({
+      title: this.data.navigateTitle
+    })
   },
-  onHide:function(){
-    // 页面隐藏
+  onScrollLower: function (e) {
+    var that=this;
+    console.log("scrolllower");
+    var APIUrl = this.data.APIUrl +
+      "?start=" + this.data.countTotal + "&count=20";
+    util.http(APIUrl, this.loadData);
   },
-  onUnload:function(){
-    // 页面关闭
+  //拉取数据
+  loadData:function (data) {
+      this.setData({
+        movies: this.data.movies.concat(util.trimDoubanData(data)),
+        countTotal: this.data.countTotal + util.trimDoubanData(data).length,
+      })
+      wx.hideNavigationBarLoading();
   }
 })

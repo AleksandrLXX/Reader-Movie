@@ -1,10 +1,10 @@
 <template name="movie-star-template">
   <view class="star-container" wx:if="{{rating.stars!=0}}">
-    <image src="{{rating.stars>=10?'/images/icon/star.png':(rating.stars>=5?'/imgaes/icon/half-star.png':'/images/icon/none-star.png')}}"></image>
-    <image src="{{rating.stars>=20?'/images/icon/star.png':(rating.stars>=15?'/imgaes/icon/half-star.png':'/images/icon/none-star.png')}}"></image>
-    <image src="{{rating.stars>=30?'/images/icon/star.png':(rating.stars>=25?'/imgaes/icon/half-star.png':'/images/icon/none-star.png')}}"></image>
-    <image src="{{rating.stars>=40?'/images/icon/star.png':(rating.stars>=35?'/imgaes/icon/half-star.png':'/images/icon/none-star.png')}}"></image>
-    <image src="{{rating.stars>=50?'/images/icon/star.png':(rating.stars>=45?'/imgaes/icon/half-star.png':'/images/icon/none-star.png')}}"></image>
+    <image src="{{rating.stars>=10?'/images/icon/star.png':(rating.stars>=5?'/images/icon/half-star.png':'/images/icon/none-star.png')}}"></image>
+    <image src="{{rating.stars>=20?'/images/icon/star.png':(rating.stars>=15?'/images/icon/half-star.png':'/images/icon/none-star.png')}}"></image>
+    <image src="{{rating.stars>=30?'/images/icon/star.png':(rating.stars>=25?'/images/icon/half-star.png':'/images/icon/none-star.png')}}"></image>
+    <image src="{{rating.stars>=40?'/images/icon/star.png':(rating.stars>=35?'/images/icon/half-star.png':'/images/icon/none-star.png')}}"></image>
+    <image src="{{rating.stars>=50?'/images/icon/star.png':(rating.stars>=45?'/images/icon/half-star.png':'/images/icon/none-star.png')}}"></image>
     <text>{{rating.average}}</text>
   </view>
   <view class="star-container" wx:else>

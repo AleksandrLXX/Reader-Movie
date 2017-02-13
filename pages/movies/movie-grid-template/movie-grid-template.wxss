@@ -1,0 +1,16 @@
+@import "../movie-unit-template/movie-unit-template.wxss";
+
+.grid-container{
+    /*display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap:  wrap;*/
+    margin: 40rpx 0 40rpx 6rpx;
+    height:1300rpx;
+}
+
+.unit-wrap{
+    float:left;
+    margin-bottom:40rpx;
+
+}
