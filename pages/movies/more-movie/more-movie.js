@@ -35,5 +35,11 @@ Page({
         countTotal: this.data.countTotal + util.trimDoubanData(data).length,
       })
       wx.hideNavigationBarLoading();
-  }
+  },
+     onMovieUnitTap:function(e){
+        var movieId=e.currentTarget.dataset.movieId;
+        wx.navigateTo({
+          url: '/pages/movies/movie-detail/movie-detail?movieId='+movieId
+        })
+    }
 })

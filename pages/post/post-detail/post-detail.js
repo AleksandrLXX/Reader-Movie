@@ -30,8 +30,15 @@ Page({
                 "musicStatus":false
             });
             app.globalData.g_musicStatus=false;
+        });
+               wx.onBackgroundAudioPause(function(){
+            that.setData({
+                "musicStatus":false
+            });
+            app.globalData.g_musicStatus=false;
         })
     },
+    
     //收藏按钮逻辑 使用缓存来模拟数据库 
     onCollectionTap: function (e) {
         var that=this;

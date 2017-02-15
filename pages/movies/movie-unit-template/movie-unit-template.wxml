@@ -1,6 +1,6 @@
 <import src="../movie-star-template/movie-star-template.wxml" />
 <template name="movie-unit-template">
-  <view class="unit-container">
+  <view class="unit-container" data-movie-Id="{{id}}" catchtap="onMovieUnitTap">
     <image src="{{images.large}}"></image>
     <text>{{title}}</text>
     <template is="movie-star-template" data="{{rating}}" />

@@ -69,7 +69,7 @@ Page({
         // 点击more组件跳转到相应的more-movie页面
     onMoreTap: function (e) {
         var category = e.currentTarget.dataset.category;
-        //将category对象转成查询字符串格式。
+        //将category对象转成查询字符串格式。category={listTitle,APIUrl};
         // console.log(util.toQueryString(category));
         wx.navigateTo({
             url: '/pages/movies/more-movie/more-movie?' + util.toQueryString(category)
@@ -105,6 +105,12 @@ Page({
 
             }
         });
+    },
+    onMovieUnitTap:function(e){
+        var movieId=e.currentTarget.dataset.movieId;
+        wx.navigateTo({
+          url: '/pages/movies/movie-detail/movie-detail?movieId='+movieId
+        })
     },
     //处理res.data,摘取并处理需要的数据返回一个名为movies的arr，期望为：arr=[message,movie0,movie2,movie3]
     trimDoubanData(data, listTitle, url) {
