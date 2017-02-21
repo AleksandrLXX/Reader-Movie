@@ -63,6 +63,7 @@ function http(url, callBack) {
     },
     success: function (res) {
       callBack(res.data);
+       wx.hideNavigationBarLoading();
     },
     fail: function (error) {
       console.log(error)

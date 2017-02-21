@@ -1,12 +1,15 @@
 <import src="movie-list-template/movie-list-template.wxml" />
 <import src="movie-grid-template/movie-grid-template.wxml" />
+
+
 <view class="search">
   <icon type="search" class="search-img" size="13" color="#405f80"></icon>
   <input type="text" placeholder="嫌疑人X的献身、我的机器人女友..." 
-  placeholder-class="placeholder" bindfocus="onBindFocus" bindconfirm="onBindConfirm"
+  placeholder-class="placeholder" bindfocus="onBindFocus" bindconfirm="onBindConfirm" bindblur="onBindBlur"
   />
   <icon wx:if="{{searchPlaneShow}}" type="clear" class="cancel-img" size="13" bindtap="onCancelTap"></icon>
 </view>
+<button wx:if="{{!locationPlaneShow}}" catchtap="onLocationSelectTap"><image mode="widthFix" src="/images/icon/切换1.png"></image>切换所在城市</button>
 <view class="container" wx:if="{{containerShow}}">
 <block wx:for="{{[dataArrays.in_theaters_dataArray,dataArrays.coming_soon_dataArray, dataArrays.top250_dataArray]}}">
   <template is="movie-list-template" data="{{item}}" />
@@ -14,4 +17,15 @@
 </view>
 <view class="search-plane" wx:if="{{searchPlaneShow}}">
     <template is="movie-grid-template" data="{{movies:searchData}}"/>
+</view>
+<view class="location-plane" wx:if="{{locationPlaneShow}}">
+   <button catchtap="onLocationConfirmTap" data-city="{{city||province}}"><text>{{province}}</text><text style="margin-left:30rpx;">{{city}}</text></button>
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="onLocationChange">
+    <picker-view-column>
+      <view wx:for="{{provinces}}" style="line-height: 50px;width:40%;margin:0 auto">{{item}}省</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{cities}}" style="line-height: 50px;width:40%;margin:0 auto">{{item}}市</view>
+    </picker-view-column>
+  </picker-view>
 </view>

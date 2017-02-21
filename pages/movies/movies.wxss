@@ -44,3 +44,21 @@
     width: 30rpx;
     margin:auto 0 auto 10rpx;
 }
+button {
+ text-align: middle;
+
+}
+button text{
+   font-size: 36rpx;
+}
+button image{
+   height: 46rpx;
+    width: 46rpx;
+    vertical-align: text-top;
+    margin-right:30rpx;
+}
+/*picker-view{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around；
+}*/
