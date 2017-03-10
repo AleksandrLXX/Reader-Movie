@@ -1,6 +1,6 @@
 # Reader-Movie
 
-一个用来查询电影资讯和新闻资讯的微信小程序。Followed by Scott [微信小程序入门与实战](http://coding.imooc.com/learn/list/75.html)
+一个用来查询电影资讯和新闻资讯的微信小程序。Followed by 七月在夏天 [微信小程序入门与实战](http://coding.imooc.com/learn/list/75.html)
 ## 使用说明
 
 1.将代码下载到本地文件夹。
